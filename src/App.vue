@@ -1,10 +1,14 @@
 <script setup>
 import Post from "./components/Post.vue";
+import AddPost from "./components/AddPost.vue";
 </script>
 
 <template>
-  <div>Post App</div>
-  <div>Seeting all post.</div>
+  <h1>Post App</h1>
+  <h2>Seeting all post.</h2>
+  <hr>
+  <AddPost />
+  <hr>
   <Post />
 </template>
 
