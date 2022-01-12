@@ -10,7 +10,7 @@ store.fetchData();
 
 <template>
   <h1>Post App</h1>
-  <h2>Seeting all post.</h2>
+  <h2>Seeing all post.</h2>
   <hr>
   <p>
     <router-link to="/">
