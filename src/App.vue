@@ -1,9 +1,11 @@
 <script setup>
-
+import Post from "./components/Post.vue";
 </script>
 
 <template>
-  <div>Hello</div>
+  <div>Post App</div>
+  <div>Seeting all post.</div>
+  <Post />
 </template>
 
 <style>
