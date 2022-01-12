@@ -6,6 +6,12 @@
       :key="id"
       class="post"
     >
+      <div
+        class="post-del"
+        @click="delPost(id)"
+      >
+        {{ `userId:${id}` }} Delete
+      </div>
       <p class="post-title">
         {{ title }}
       </p>
@@ -27,6 +33,10 @@ store.fetchData();
 
 const list = computed(() => store.getPosts);
 
+const delPost = async function (uid) {
+	store.SendDelPost({ uid });
+};
+
 </script>
 
 <style lang="scss" scoped>
@@ -40,6 +50,14 @@ const list = computed(() => store.getPosts);
     background: #333;
     color: #EEE;
     margin: 5px 0;
+  }
+
+  .post-del {
+    cursor: pointer;
+    &:hover {
+      background: #333;
+      color: #EEE;
+    }
   }
 }
 

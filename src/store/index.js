@@ -25,11 +25,21 @@ const usePostStore = defineStore({
 			const res = await axios.post("https://jsonplaceholder.typicode.com/Posts", payload);
 			this.addPost(payload);
 		},
+		// 送出刪除貼文
+		async SendDelPost(payload) {
+			const { uid } = payload;
+			const res = await axios.delete(`https://jsonplaceholder.typicode.com/Posts/${uid}`);
+			this.delPost(uid);
+		},
 		// 新增頁面顯示貼文
 		addPost(payload) {
-			console.log(payload);
 			const { userId, title, body } = payload;
 			this.allPost.push({ id: userId, title, body });
+		},
+		// 刪除頁面顯示貼文
+		delPost(uid) {
+			const targetIdx = this.allPost.findIndex(({ id }) => id === uid);
+			this.allPost.splice(targetIdx, 1);
 		}
 	}
 });
