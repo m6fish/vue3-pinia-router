@@ -11,6 +11,7 @@
     "axios": "^0.24.0",
     "bootstrap": "^5.0.2",
     "pinia": "^2.0.8",
+    "sass": "^1.47.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
