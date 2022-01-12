@@ -7,6 +7,16 @@ import AddPost from "./components/AddPost.vue";
   <h1>Post App</h1>
   <h2>Seeting all post.</h2>
   <hr>
+  <p>
+    <router-link to="/">
+      Go to Link1
+    </router-link>
+    <router-link to="/about">
+      Go to Link2
+    </router-link>
+  </p>
+  <router-view />
+  <hr>
   <AddPost />
   <hr>
   <Post />
