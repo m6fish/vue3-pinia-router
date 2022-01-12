@@ -18,23 +18,32 @@
       <div class="post-body">
         {{ body }}
       </div>
+      <div
+        class="post-edit"
+        @click="toEdit(id)"
+      >
+        Edit
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { onMounted, reactive, computed } from "vue";
+import { useRouter } from "vue-router";
 import usePostStore from "../store/index.js";
 
 const store = usePostStore();
-
-// 打資料
-store.fetchData();
 
 const list = computed(() => store.getPosts);
 
 const delPost = async function (uid) {
 	store.SendDelPost({ uid });
+};
+
+const router = useRouter();
+const toEdit = function (uid) {
+	router.push(`/edit/${uid}`);
 };
 
 </script>

@@ -1,6 +1,11 @@
 <script setup>
-import Post from "./components/Post.vue";
-import AddPost from "./components/AddPost.vue";
+
+import usePostStore from "./store/index.js";
+
+const store = usePostStore();
+
+// 打資料
+store.fetchData();
 </script>
 
 <template>
@@ -9,17 +14,10 @@ import AddPost from "./components/AddPost.vue";
   <hr>
   <p>
     <router-link to="/">
-      Go to Link1
-    </router-link>
-    <router-link to="/about">
-      Go to Link2
+      Home
     </router-link>
   </p>
   <router-view />
-  <hr>
-  <AddPost />
-  <hr>
-  <Post />
 </template>
 
 <style>

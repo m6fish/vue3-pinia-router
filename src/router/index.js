@@ -1,11 +1,17 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import link1 from "../components/link1.vue";
-import link2 from "../components/link2.vue";
+import home from "../components/Home.vue";
+import edit from "../components/EditPost.vue";
 
 const routes = [
-	{ path: "/", component: link1 },
-	{ path: "/about", component: link2 }
+	{
+		path: "/",
+		component: home,
+		meta: {
+			keepAlive: true
+		}
+	},
+	{ path: "/edit/:id", component: edit }
 ];
 
 const router = createRouter({
