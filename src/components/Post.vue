@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, reactive, computed } from "vue";
 import usePostStore from "../store/index.js";
 
 const store = usePostStore();
@@ -25,7 +25,7 @@ const store = usePostStore();
 // 打資料
 store.fetchData();
 
-const list = store.getPosts;
+const list = computed(() => store.getPosts);
 
 </script>
 
