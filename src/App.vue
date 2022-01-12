@@ -31,4 +31,11 @@ import AddPost from "./components/AddPost.vue";
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.active {
+  border-radius: 5px;
+  background: #333;
+  color: #CCC;
+}
+
 </style>
